@@ -43,7 +43,7 @@ class XingProvider(
       val firstName = (me \ FirstName).asOpt[String]
       val profileImage = (me \ ProfileImage \ Large).asOpt[String]
       val email = (me \ ActiveEmail).asOpt[String]
-      BasicProfile(id, userId, displayName, firstName, lastName, email, profileImage, authMethod, Some(info))
+      BasicProfile(id, userId, displayName, firstName, lastName, email, profileImage, authMethod, Some(info), active = true)
     } recover {
       case e =>
         logger.error("[securesocial] error retrieving profile information from Xing", e)

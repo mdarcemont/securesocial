@@ -51,7 +51,7 @@ class LinkedInOAuth2Provider(routesService: RoutesService,
           val fullName = (me \ FormattedName).asOpt[String]
           val avatarUrl = (me \ PictureUrl).asOpt[String]
           val emailAddress = (me \ EmailAddress).asOpt[String]
-          BasicProfile(id, userId, firstName, lastName, fullName, emailAddress, avatarUrl, authMethod, oAuth2Info = Some(info))
+          BasicProfile(id, userId, firstName, lastName, fullName, emailAddress, avatarUrl, authMethod, oAuth2Info = Some(info), active = true)
         }
       }
     } recover {

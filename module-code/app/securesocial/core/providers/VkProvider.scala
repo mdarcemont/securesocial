@@ -42,7 +42,7 @@ class VkProvider(routesService: RoutesService,
           val firstName = (me \ FirstName).asOpt[String]
           val lastName = (me \ LastName).asOpt[String]
           val avatarUrl = (me \ Photo).asOpt[String]
-          BasicProfile(id, userId, firstName, lastName, None, None, avatarUrl, authMethod, oAuth2Info = Some(info))
+          BasicProfile(id, userId, firstName, lastName, None, None, avatarUrl, authMethod, oAuth2Info = Some(info), active = true)
       }
     } recover {
       case e: AuthenticationException => throw e

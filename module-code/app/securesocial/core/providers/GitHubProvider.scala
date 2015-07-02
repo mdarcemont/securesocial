@@ -68,7 +68,7 @@ class GitHubProvider(routesService: RoutesService,
           val displayName = (me \ Name).asOpt[String]
           val avatarUrl = (me \ AvatarUrl).asOpt[String]
           val email = (me \ Email).asOpt[String].filter(!_.isEmpty)
-          BasicProfile(id, userId.toString, None, None, displayName, email, avatarUrl, authMethod, oAuth2Info = Some(info))
+          BasicProfile(id, userId.toString, None, None, displayName, email, avatarUrl, authMethod, oAuth2Info = Some(info), active = true)
       }
     } recover {
       case e: AuthenticationException => throw e

@@ -108,7 +108,7 @@ class ConcurProvider(routesService: RoutesService,
               case s: String if !s.isEmpty => Some(s)
               case _ => None
             }
-            BasicProfile(id, userId, firstName, lastName, fullName, email, None, authMethod, oAuth2Info = Some(info))
+            BasicProfile(id, userId, firstName, lastName, fullName, email, None, authMethod, oAuth2Info = Some(info), active = true)
         }
       } recover {
         case e: AuthenticationException => throw e

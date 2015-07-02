@@ -86,7 +86,7 @@ class WeiboProvider(routesService: RoutesService,
           val displayName = (me \ Name).asOpt[String]
           val avatarUrl = (me \ AvatarUrl).asOpt[String]
           getEmail(info.accessToken).map { email =>
-            BasicProfile(id, userId, None, None, displayName, email, avatarUrl, authMethod, None, Some(info))
+            BasicProfile(id, userId, None, None, displayName, email, avatarUrl, authMethod, None, Some(info), active = true)
           }
       }
     } recover {

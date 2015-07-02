@@ -41,7 +41,7 @@ class TwitterProvider(
       val userId = (me \ Id).as[String]
       val name = (me \ Name).asOpt[String]
       val avatar = (me \ ProfileImage).asOpt[String]
-      BasicProfile(id, userId, None, None, name, None, avatar, authMethod, Some(info))
+      BasicProfile(id, userId, None, None, name, None, avatar, authMethod, Some(info), active = true)
     } recover {
       case e =>
         logger.error("[securesocial] error retrieving profile information from Twitter", e)

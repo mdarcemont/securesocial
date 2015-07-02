@@ -51,7 +51,7 @@ class InstagramProvider(routesService: RoutesService,
           val userId = (me \ Data \ Id).as[String]
           val fullName = (me \ Data \ FullName).asOpt[String]
           val avatarUrl = (me \ Data \ ProfilePic).asOpt[String]
-          BasicProfile(id, userId, None, None, fullName, None, avatarUrl, authMethod, oAuth2Info = Some(info))
+          BasicProfile(id, userId, None, None, fullName, None, avatarUrl, authMethod, oAuth2Info = Some(info), active = true)
       }
     } recover {
       case e: AuthenticationException => throw e

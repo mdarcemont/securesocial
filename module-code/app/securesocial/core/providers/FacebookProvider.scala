@@ -78,7 +78,7 @@ class FacebookProvider(routesService: RoutesService,
           val picture = me \ Picture
           val avatarUrl = (picture \ Data \ Url).asOpt[String]
           val email = (me \ Email).asOpt[String]
-          BasicProfile(id, userId, firstName, lastName, name, email, avatarUrl, authMethod, oAuth2Info = Some(info))
+          BasicProfile(id, userId, firstName, lastName, name, email, avatarUrl, authMethod, oAuth2Info = Some(info), active = true)
       }
     } recover {
       case e: AuthenticationException => throw e
